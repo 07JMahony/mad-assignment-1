@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.wit.placemark.activities.PlacemarkActivity">
+    tools:context="org.wit.flashcards.activities.FlashcardSetActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,12 +41,12 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/placemarkTitle"
+                    android:id="@+id/setName"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_margin="8dp"
                     android:autofillHints=""
-                    android:hint="@string/hint_placemarkTitle"
+                    android:hint="@string/hint_setName"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
@@ -78,7 +78,7 @@
                     android:background="@color/colorAccent"
                     android:padding="8dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/button_addPlacemark"
+                    android:text="@string/button_addFlashcard"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     tools:ignore="VisualLintButtonSize" />

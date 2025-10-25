@@ -1,6 +1,5 @@
-package org.wit.placemark.activities
+package org.wit.flashcards.activities
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,21 +7,21 @@ import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.wit.placemark.R
-import org.wit.placemark.adapters.PlacemarkAdapter
-import org.wit.placemark.adapters.PlacemarkListener
-import org.wit.placemark.databinding.ActivityPlacemarkListBinding
-import org.wit.placemark.main.MainApp
-import org.wit.placemark.models.PlacemarkModel
+import org.wit.flashcards.R
+import org.wit.flashcards.adapters.FlashcardSetAdapter
+import org.wit.flashcards.adapters.FlashcardSetListener
+import org.wit.flashcards.databinding.ActivityFlashcardSetListBinding
+import org.wit.flashcards.main.MainApp
+import org.wit.flashcards.models.FlashcardSetModel
 
-class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
+class FlashcardSetListActivity : AppCompatActivity(), FlashcardSetListener {
 
     lateinit var app: MainApp
-    private lateinit var binding: ActivityPlacemarkListBinding
+    private lateinit var binding: ActivityFlashcardSetListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPlacemarkListBinding.inflate(layoutInflater)
+        binding = ActivityFlashcardSetListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.toolbar.title = title
         setSupportActionBar(binding.toolbar)
@@ -31,7 +30,7 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
 
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = PlacemarkAdapter(app.placemarks.findAll(),this)
+        binding.recyclerView.adapter = FlashcardSetAdapter(app.flashcardSets.findAll(), this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -42,7 +41,7 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_add -> {
-                val launcherIntent = Intent(this, PlacemarkActivity::class.java)
+                val launcherIntent = Intent(this, FlashcardSetActivity::class.java)
                 getResult.launch(launcherIntent)
             }
         }
@@ -55,13 +54,13 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         ) {
             if (it.resultCode == RESULT_OK) {
                 (binding.recyclerView.adapter)?.
-                notifyItemRangeChanged(0,app.placemarks.findAll().size)
+                notifyItemRangeChanged(0, app.flashcardSets.findAll().size)
             }
         }
 
-    override fun onPlacemarkClick(placemark: PlacemarkModel) {
-        val launcherIntent = Intent(this, PlacemarkActivity::class.java)
-        launcherIntent.putExtra("placemark_edit", placemark)
+    override fun onFlashcardSetClick(flashcardSet: FlashcardSetModel) {
+        val launcherIntent = Intent(this, FlashcardSetActivity::class.java)
+        launcherIntent.putExtra("flashcard_set_edit", flashcardSet)
         getClickResult.launch(launcherIntent)
     }
 
@@ -71,7 +70,7 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         ) {
             if (it.resultCode == RESULT_OK) {
                 (binding.recyclerView.adapter)?.
-                notifyItemRangeChanged(0,app.placemarks.findAll().size)
+                notifyItemRangeChanged(0, app.flashcardSets.findAll().size)
             }
         }
 }

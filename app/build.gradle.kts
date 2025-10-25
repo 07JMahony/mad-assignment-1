@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.wit.placemark"
+    namespace = "org.wit.flashcards"
     compileSdk = 36
     
     defaultConfig {
-        applicationId = "org.wit.placemark"
+        applicationId = "org.wit.flashcards"
         minSdk = 30
         targetSdk = 36
         versionCode = 1

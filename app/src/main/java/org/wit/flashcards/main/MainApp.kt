@@ -1,7 +1,7 @@
-package org.wit.placemark.main
+package org.wit.flashcards.main
 
 import android.app.Application
-import org.wit.placemark.models.PlacemarkMemStore
+import org.wit.flashcards.models.PlacemarkMemStore
 import timber.log.Timber
 import timber.log.Timber.i
 

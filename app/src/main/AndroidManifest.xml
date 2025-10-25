@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name="org.wit.placemark.main.MainApp"
+        android:name="org.wit.flashcards.main.MainApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Placemark">
-        <activity android:name=".activities.PlacemarkListActivity"
+        <activity android:name=".activities.FlashcardSetListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             <meta-data android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".activities.PlacemarkActivity">
+        <activity android:name=".activities.FlashcardSetActivity">
             <meta-data android:name="android.app.lib_name"
                 android:value="" />
         </activity>

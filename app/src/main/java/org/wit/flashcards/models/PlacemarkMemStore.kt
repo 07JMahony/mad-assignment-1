@@ -1,4 +1,4 @@
-package org.wit.placemark.models
+package org.wit.flashcards.models
 
 import timber.log.Timber.i
 
@@ -10,20 +10,20 @@ internal fun getId(): Long {
 
 class PlacemarkMemStore : PlacemarkStore {
 
-    val placemarks = ArrayList<PlacemarkModel>()
+    val placemarks = ArrayList<FlashcardSetModel>()
 
-    override fun findAll(): List<PlacemarkModel> {
+    override fun findAll(): List<FlashcardSetModel> {
         return placemarks
     }
 
-    override fun create(placemark: PlacemarkModel) {
+    override fun create(placemark: FlashcardSetModel) {
         placemark.id = getId()
         placemarks.add(placemark)
         logAll()
     }
 
-    override fun update(placemark: PlacemarkModel) {
-        var foundPlacemark: PlacemarkModel? = placemarks.find { p -> p.id == placemark.id }
+    override fun update(placemark: FlashcardSetModel) {
+        var foundPlacemark: FlashcardSetModel? = placemarks.find { p -> p.id == placemark.id }
         if (foundPlacemark != null) {
             foundPlacemark.title = placemark.title
             foundPlacemark.description = placemark.description
