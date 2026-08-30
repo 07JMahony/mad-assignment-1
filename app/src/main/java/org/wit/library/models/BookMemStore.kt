@@ -31,6 +31,11 @@ class BookMemStore : BookStore {
         }
     }
 
+    override fun delete(book: BookModel) {
+        books.removeAll { it.id == book.id }
+        logAll()
+    }
+
     private fun logAll() {
         books.forEach { i("$it") }
     }

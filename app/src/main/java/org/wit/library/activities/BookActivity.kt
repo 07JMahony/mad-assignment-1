@@ -3,6 +3,7 @@ package org.wit.library.activities
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import org.wit.library.R
@@ -57,14 +58,36 @@ class BookActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        // There is nothing to delete until the book actually exists.
+        menu.findItem(R.id.item_delete).isVisible = editing
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_cancel -> {
                 finish()
                 return true
             }
+            R.id.item_delete -> {
+                confirmDelete()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun confirmDelete() {
+        AlertDialog.Builder(this)
+            .setMessage(R.string.confirm_deleteBook)
+            .setPositiveButton(R.string.action_delete) { _, _ ->
+                app.books.delete(book)
+                setResult(RESULT_OK)
+                finish()
+            }
+            .setNegativeButton(R.string.action_cancel, null)
+            .show()
     }
 
     companion object {
