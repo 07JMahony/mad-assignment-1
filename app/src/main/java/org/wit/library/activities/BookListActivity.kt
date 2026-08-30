@@ -48,6 +48,9 @@ class BookListActivity : AppCompatActivity(), BookListener {
     }
 
     override fun onBookClick(book: BookModel) {
+        val launcherIntent = Intent(this, BookActivity::class.java)
+        launcherIntent.putExtra(BookActivity.EXTRA_BOOK, book)
+        getResult.launch(launcherIntent)
     }
 
     private val getResult =

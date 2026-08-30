@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Library</string>
+    <string name="title_addBook">Add Book</string>
+    <string name="title_editBook">Edit Book</string>
     <string name="button_addBook">Add Book</string>
+    <string name="button_saveBook">Save Book</string>
     <string name="hint_bookTitle">Book Title</string>
     <string name="hint_bookAuthor">Author</string>
     <string name="menu_addBook">Add</string>

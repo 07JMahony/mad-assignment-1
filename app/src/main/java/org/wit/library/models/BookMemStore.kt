@@ -22,6 +22,15 @@ class BookMemStore : BookStore {
         logAll()
     }
 
+    override fun update(book: BookModel) {
+        val foundBook = books.find { it.id == book.id }
+        if (foundBook != null) {
+            foundBook.title = book.title
+            foundBook.author = book.author
+            logAll()
+        }
+    }
+
     private fun logAll() {
         books.forEach { i("$it") }
     }

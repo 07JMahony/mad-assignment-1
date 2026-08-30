@@ -15,14 +15,25 @@ class BookActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBookBinding
     private lateinit var app: MainApp
     private var book = BookModel()
+    private var editing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBookBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.toolbarAdd.title = title
+        binding.toolbarAdd.title = getString(R.string.title_addBook)
         setSupportActionBar(binding.toolbarAdd)
         app = application as MainApp
+
+        // Arriving with a book attached means we are editing rather than adding.
+        if (intent.hasExtra(EXTRA_BOOK)) {
+            editing = true
+            book = intent.extras?.getParcelable(EXTRA_BOOK)!!
+            binding.bookTitle.setText(book.title)
+            binding.bookAuthor.setText(book.author)
+            binding.btnAdd.setText(R.string.button_saveBook)
+            binding.toolbarAdd.title = getString(R.string.title_editBook)
+        }
 
         binding.btnAdd.setOnClickListener {
             book.title = binding.bookTitle.text.toString()
@@ -30,7 +41,11 @@ class BookActivity : AppCompatActivity() {
             if (book.title.isEmpty()) {
                 Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()
             } else {
-                app.books.create(book.copy())
+                if (editing) {
+                    app.books.update(book.copy())
+                } else {
+                    app.books.create(book.copy())
+                }
                 setResult(RESULT_OK)
                 finish()
             }
@@ -50,5 +65,9 @@ class BookActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val EXTRA_BOOK = "book_edit"
     }
 }
