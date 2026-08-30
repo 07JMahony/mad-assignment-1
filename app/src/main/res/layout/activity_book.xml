@@ -62,6 +62,24 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_genre"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/bookGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:entries="@array/genres"
+                android:minHeight="48dp"
+                android:padding="8dp" />
+
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="match_parent"

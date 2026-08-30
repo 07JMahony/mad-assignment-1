@@ -6,6 +6,7 @@
     <string name="button_saveBook">Save Book</string>
     <string name="hint_bookTitle">Book Title</string>
     <string name="hint_bookAuthor">Author</string>
+    <string name="label_genre">Genre</string>
     <string name="menu_addBook">Add</string>
     <string name="menu_cancelBook">Cancel</string>
     <string name="menu_deleteBook">Delete</string>

@@ -27,5 +27,13 @@
             android:layout_below="@id/bookTitle"
             tools:text="J.R.R. Tolkien" />
 
+        <TextView
+            android:id="@+id/bookGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bookAuthor"
+            android:textSize="12sp"
+            tools:text="Fantasy" />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

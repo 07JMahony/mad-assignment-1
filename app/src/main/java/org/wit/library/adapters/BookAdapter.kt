@@ -34,6 +34,7 @@ class BookAdapter(private var books: List<BookModel>,
         fun bind(book: BookModel, listener: BookListener) {
             binding.bookTitle.text = book.title
             binding.bookAuthor.text = book.author
+            binding.bookGenre.text = book.genre
             binding.root.setOnClickListener { listener.onBookClick(book) }
         }
     }

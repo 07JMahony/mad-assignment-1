@@ -27,6 +27,7 @@ class BookMemStore : BookStore {
         if (foundBook != null) {
             foundBook.title = book.title
             foundBook.author = book.author
+            foundBook.genre = book.genre
             logAll()
         }
     }

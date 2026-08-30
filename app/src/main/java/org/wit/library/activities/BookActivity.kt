@@ -32,6 +32,7 @@ class BookActivity : AppCompatActivity() {
             book = intent.extras?.getParcelable(EXTRA_BOOK)!!
             binding.bookTitle.setText(book.title)
             binding.bookAuthor.setText(book.author)
+            selectGenre(book.genre)
             binding.btnAdd.setText(R.string.button_saveBook)
             binding.toolbarAdd.title = getString(R.string.title_editBook)
         }
@@ -40,6 +41,7 @@ class BookActivity : AppCompatActivity() {
             // Trim first so a field of spaces is treated as empty, not as a valid title.
             book.title = binding.bookTitle.text.toString().trim()
             book.author = binding.bookAuthor.text.toString().trim()
+            book.genre = binding.bookGenre.selectedItem.toString()
             when {
                 book.title.isEmpty() ->
                     Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()
@@ -81,6 +83,14 @@ class BookActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    /** Moves the spinner to a saved genre, leaving it on the default if it is not in the list. */
+    private fun selectGenre(genre: String) {
+        val position = resources.getStringArray(R.array.genres).indexOf(genre)
+        if (position >= 0) {
+            binding.bookGenre.setSelection(position)
+        }
     }
 
     private fun confirmDelete() {

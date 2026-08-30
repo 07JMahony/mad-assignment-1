@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genres">
+        <item>Fiction</item>
+        <item>Non-Fiction</item>
+        <item>Fantasy</item>
+        <item>Science Fiction</item>
+        <item>Mystery</item>
+        <item>Thriller</item>
+        <item>Romance</item>
+        <item>Biography</item>
+        <item>History</item>
+        <item>Other</item>
+    </string-array>
+</resources>
