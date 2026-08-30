@@ -1,4 +1,4 @@
-package org.wit.shelfie.models
+package org.wit.library.models
 
 import timber.log.Timber.i
 

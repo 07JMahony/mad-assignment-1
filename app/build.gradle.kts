@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.wit.shelfie"
+    namespace = "org.wit.library"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "org.wit.shelfie"
+        applicationId = "org.wit.library"
         minSdk = 30
         targetSdk = 36
         versionCode = 1

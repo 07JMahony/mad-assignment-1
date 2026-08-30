@@ -1,4 +1,4 @@
-package org.wit.shelfie.activities
+package org.wit.library.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,12 @@ import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.wit.shelfie.R
-import org.wit.shelfie.adapters.BookAdapter
-import org.wit.shelfie.adapters.BookListener
-import org.wit.shelfie.databinding.ActivityBookListBinding
-import org.wit.shelfie.main.MainApp
-import org.wit.shelfie.models.BookModel
+import org.wit.library.R
+import org.wit.library.adapters.BookAdapter
+import org.wit.library.adapters.BookListener
+import org.wit.library.databinding.ActivityBookListBinding
+import org.wit.library.main.MainApp
+import org.wit.library.models.BookModel
 
 class BookListActivity : AppCompatActivity(), BookListener {
 

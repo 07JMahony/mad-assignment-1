@@ -1,4 +1,4 @@
-package org.wit.shelfie.models
+package org.wit.library.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

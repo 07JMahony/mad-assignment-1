@@ -1,7 +1,7 @@
-package org.wit.shelfie.main
+package org.wit.library.main
 
 import android.app.Application
-import org.wit.shelfie.models.BookMemStore
+import org.wit.library.models.BookMemStore
 import timber.log.Timber
 import timber.log.Timber.i
 
@@ -12,6 +12,6 @@ class MainApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
-        i("Shelfie started")
+        i("Library app started")
     }
 }

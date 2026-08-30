@@ -1,10 +1,10 @@
-package org.wit.shelfie.adapters
+package org.wit.library.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.wit.shelfie.databinding.CardBookBinding
-import org.wit.shelfie.models.BookModel
+import org.wit.library.databinding.CardBookBinding
+import org.wit.library.models.BookModel
 
 interface BookListener {
     fun onBookClick(book: BookModel)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shelfie</string>
+    <string name="app_name">Library</string>
     <string name="button_addBook">Add Book</string>
     <string name="hint_bookTitle">Book Title</string>
     <string name="hint_bookAuthor">Author</string>

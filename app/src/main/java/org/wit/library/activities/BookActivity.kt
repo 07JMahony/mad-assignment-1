@@ -1,14 +1,14 @@
-package org.wit.shelfie.activities
+package org.wit.library.activities
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import org.wit.shelfie.R
-import org.wit.shelfie.databinding.ActivityBookBinding
-import org.wit.shelfie.main.MainApp
-import org.wit.shelfie.models.BookModel
+import org.wit.library.R
+import org.wit.library.databinding.ActivityBookBinding
+import org.wit.library.main.MainApp
+import org.wit.library.models.BookModel
 
 class BookActivity : AppCompatActivity() {
 

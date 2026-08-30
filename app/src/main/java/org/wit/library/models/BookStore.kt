@@ -1,4 +1,4 @@
-package org.wit.shelfie.models
+package org.wit.library.models
 
 interface BookStore {
     fun findAll(): List<BookModel>

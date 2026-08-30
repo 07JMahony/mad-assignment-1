@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Shelfie"
+rootProject.name = "Library"
 include(":app")
