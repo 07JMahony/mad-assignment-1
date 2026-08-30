@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.wit.flashcards"
+    namespace = "org.wit.shelfie"
     compileSdk = 36
-    
+
     defaultConfig {
-        applicationId = "org.wit.flashcards"
+        applicationId = "org.wit.shelfie"
         minSdk = 30
         targetSdk = 36
         versionCode = 1
@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
     implementation(libs.timber)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

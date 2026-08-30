@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Placemark</string>
-    <string name="button_addPlacemark">Add Placemark</string>
-    <string name="hint_placemarkTitle">Placemark Title</string>
-    <string name="hint_placemarkDescription">Description </string>
-    <string name="menu_addPlacemark">Add</string>
-    <string name="menu_cancelPlacemark">Cancel</string>
-    <string name="enter_placemark_title"> Please enter a Placemark Title </string>
-    <string name="save_placemark"> Save Placemark </string>
+    <string name="app_name">Shelfie</string>
+    <string name="button_addBook">Add Book</string>
+    <string name="hint_bookTitle">Book Title</string>
+    <string name="hint_bookAuthor">Author</string>
+    <string name="menu_addBook">Add</string>
+    <string name="menu_cancelBook">Cancel</string>
+    <string name="enter_book_title">Please enter a book title</string>
 </resources>

@@ -13,19 +13,19 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/setName"
+            android:id="@+id/bookTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:textSize="30sp"
-            tools:text="A Title" />
+            android:textSize="24sp"
+            tools:text="The Hobbit" />
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/bookAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/placemarkTitle"
-            tools:text="A Description" />
+            android:layout_below="@id/bookTitle"
+            tools:text="J.R.R. Tolkien" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
