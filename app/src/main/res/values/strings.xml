@@ -13,4 +13,5 @@
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
     <string name="enter_book_title">Please enter a book title</string>
+    <string name="enter_book_author">Please enter an author</string>
 </resources>

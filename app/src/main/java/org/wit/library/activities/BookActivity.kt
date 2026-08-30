@@ -37,18 +37,23 @@ class BookActivity : AppCompatActivity() {
         }
 
         binding.btnAdd.setOnClickListener {
-            book.title = binding.bookTitle.text.toString()
-            book.author = binding.bookAuthor.text.toString()
-            if (book.title.isEmpty()) {
-                Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()
-            } else {
-                if (editing) {
-                    app.books.update(book.copy())
-                } else {
-                    app.books.create(book.copy())
+            // Trim first so a field of spaces is treated as empty, not as a valid title.
+            book.title = binding.bookTitle.text.toString().trim()
+            book.author = binding.bookAuthor.text.toString().trim()
+            when {
+                book.title.isEmpty() ->
+                    Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()
+                book.author.isEmpty() ->
+                    Snackbar.make(it, R.string.enter_book_author, Snackbar.LENGTH_LONG).show()
+                else -> {
+                    if (editing) {
+                        app.books.update(book.copy())
+                    } else {
+                        app.books.create(book.copy())
+                    }
+                    setResult(RESULT_OK)
+                    finish()
                 }
-                setResult(RESULT_OK)
-                finish()
             }
         }
     }
