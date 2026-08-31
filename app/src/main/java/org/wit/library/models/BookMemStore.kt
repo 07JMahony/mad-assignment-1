@@ -29,6 +29,7 @@ class BookMemStore : BookStore {
             foundBook.author = book.author
             foundBook.genre = book.genre
             foundBook.rating = book.rating
+            foundBook.read = book.read
             logAll()
         }
     }

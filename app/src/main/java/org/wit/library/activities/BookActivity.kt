@@ -38,6 +38,7 @@ class BookActivity : AppCompatActivity() {
             binding.bookAuthor.setText(book.author)
             selectGenre(book.genre)
             binding.bookRating.value = book.rating
+            binding.bookRead.isChecked = book.read
             binding.btnAdd.setText(R.string.button_saveBook)
             binding.toolbarAdd.title = getString(R.string.title_editBook)
         }
@@ -48,6 +49,7 @@ class BookActivity : AppCompatActivity() {
             book.author = binding.bookAuthor.text.toString().trim()
             book.genre = binding.bookGenre.selectedItem.toString()
             book.rating = binding.bookRating.value
+            book.read = binding.bookRead.isChecked
             when {
                 book.title.isEmpty() ->
                     Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()

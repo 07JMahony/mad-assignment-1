@@ -41,6 +41,9 @@ class BookAdapter(private var books: List<BookModel>,
             } else {
                 "★".repeat(book.rating)
             }
+            binding.bookStatus.setText(
+                if (book.read) R.string.status_read else R.string.status_unread
+            )
             binding.root.setOnClickListener { listener.onBookClick(book) }
         }
     }

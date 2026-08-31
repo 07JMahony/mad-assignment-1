@@ -96,6 +96,16 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="8dp" />
 
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/bookRead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:minHeight="48dp"
+                android:text="@string/label_read"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="match_parent"
