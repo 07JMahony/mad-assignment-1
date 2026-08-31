@@ -26,6 +26,10 @@ class BookActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarAdd)
         app = application as MainApp
 
+        // NumberPicker has no XML attributes for its bounds, so set them here.
+        binding.bookRating.minValue = 0
+        binding.bookRating.maxValue = 5
+
         // Arriving with a book attached means we are editing rather than adding.
         if (intent.hasExtra(EXTRA_BOOK)) {
             editing = true
@@ -33,6 +37,7 @@ class BookActivity : AppCompatActivity() {
             binding.bookTitle.setText(book.title)
             binding.bookAuthor.setText(book.author)
             selectGenre(book.genre)
+            binding.bookRating.value = book.rating
             binding.btnAdd.setText(R.string.button_saveBook)
             binding.toolbarAdd.title = getString(R.string.title_editBook)
         }
@@ -42,6 +47,7 @@ class BookActivity : AppCompatActivity() {
             book.title = binding.bookTitle.text.toString().trim()
             book.author = binding.bookAuthor.text.toString().trim()
             book.genre = binding.bookGenre.selectedItem.toString()
+            book.rating = binding.bookRating.value
             when {
                 book.title.isEmpty() ->
                     Snackbar.make(it, R.string.enter_book_title, Snackbar.LENGTH_LONG).show()

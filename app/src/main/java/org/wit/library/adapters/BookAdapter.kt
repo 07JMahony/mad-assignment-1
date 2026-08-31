@@ -3,6 +3,7 @@ package org.wit.library.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.wit.library.R
 import org.wit.library.databinding.CardBookBinding
 import org.wit.library.models.BookModel
 
@@ -35,6 +36,11 @@ class BookAdapter(private var books: List<BookModel>,
             binding.bookTitle.text = book.title
             binding.bookAuthor.text = book.author
             binding.bookGenre.text = book.genre
+            binding.bookRating.text = if (book.rating == 0) {
+                binding.root.context.getString(R.string.rating_none)
+            } else {
+                "★".repeat(book.rating)
+            }
             binding.root.setOnClickListener { listener.onBookClick(book) }
         }
     }

@@ -7,6 +7,8 @@
     <string name="hint_bookTitle">Book Title</string>
     <string name="hint_bookAuthor">Author</string>
     <string name="label_genre">Genre</string>
+    <string name="label_rating">Rating</string>
+    <string name="rating_none">Not rated</string>
     <string name="menu_addBook">Add</string>
     <string name="menu_cancelBook">Cancel</string>
     <string name="menu_deleteBook">Delete</string>

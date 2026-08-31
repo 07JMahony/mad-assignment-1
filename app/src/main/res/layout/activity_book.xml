@@ -80,6 +80,22 @@
                 android:minHeight="48dp"
                 android:padding="8dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_rating"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <NumberPicker
+                android:id="@+id/bookRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp" />
+
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="match_parent"
