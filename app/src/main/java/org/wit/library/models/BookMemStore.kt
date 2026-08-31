@@ -2,12 +2,6 @@ package org.wit.library.models
 
 import timber.log.Timber.i
 
-var lastId = 0L
-
-internal fun getId(): Long {
-    return lastId++
-}
-
 class BookMemStore : BookStore {
 
     private val books = ArrayList<BookModel>()
@@ -17,7 +11,7 @@ class BookMemStore : BookStore {
     }
 
     override fun create(book: BookModel) {
-        book.id = getId()
+        book.id = (books.maxOfOrNull { it.id } ?: 0L) + 1
         books.add(book)
         logAll()
     }
