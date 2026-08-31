@@ -15,6 +15,9 @@
     <string name="menu_addBook">Add</string>
     <string name="menu_cancelBook">Cancel</string>
     <string name="menu_deleteBook">Delete</string>
+    <string name="menu_clearLibrary">Clear library</string>
+    <string name="confirm_clearLibrary">Remove all books from your library?</string>
+    <string name="action_clear">Clear</string>
     <string name="confirm_deleteBook">Remove this book from your library?</string>
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>

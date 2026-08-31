@@ -5,4 +5,5 @@ interface BookStore {
     fun create(book: BookModel)
     fun update(book: BookModel)
     fun delete(book: BookModel)
+    fun deleteAll()
 }

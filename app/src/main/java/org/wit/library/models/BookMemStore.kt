@@ -33,6 +33,11 @@ class BookMemStore : BookStore {
         logAll()
     }
 
+    override fun deleteAll() {
+        books.clear()
+        logAll()
+    }
+
     private fun logAll() {
         books.forEach { i("$it") }
     }

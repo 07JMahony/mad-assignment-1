@@ -51,6 +51,11 @@ class BookJSONStore(private val context: Context) : BookStore {
         serialize()
     }
 
+    override fun deleteAll() {
+        books.clear()
+        serialize()
+    }
+
     private fun serialize() {
         write(context, JSON_FILE, gson.toJson(books, listType))
         i("Saved ${books.size} books")
