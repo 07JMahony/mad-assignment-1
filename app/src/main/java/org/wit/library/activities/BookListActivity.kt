@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,15 @@ class BookListActivity : AppCompatActivity(), BookListener {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = BookAdapter(app.books.findAll(), this)
+        refreshList()
+    }
+
+    /** Redraws the list and swaps in the empty-state message when there is nothing to show. */
+    private fun refreshList() {
+        binding.recyclerView.adapter?.notifyDataSetChanged()
+        val isEmpty = app.books.findAll().isEmpty()
+        binding.emptyState.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        binding.recyclerView.visibility = if (isEmpty) View.GONE else View.VISIBLE
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -60,7 +70,7 @@ class BookListActivity : AppCompatActivity(), BookListener {
             .setMessage(R.string.confirm_clearLibrary)
             .setPositiveButton(R.string.action_clear) { _, _ ->
                 app.books.deleteAll()
-                binding.recyclerView.adapter?.notifyDataSetChanged()
+                refreshList()
             }
             .setNegativeButton(R.string.action_cancel, null)
             .show()
@@ -75,7 +85,7 @@ class BookListActivity : AppCompatActivity(), BookListener {
     private val getResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
-                binding.recyclerView.adapter?.notifyDataSetChanged()
+                refreshList()
             }
         }
 }
